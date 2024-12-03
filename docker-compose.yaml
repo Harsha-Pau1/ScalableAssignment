@@ -1,0 +1,58 @@
+services:
+  frontend:
+    image: frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - user-service
+      - course-service
+      - progress-service
+    networks:
+      - app-network
+
+  user-service:
+    image: user_service
+    ports:
+      - "5001:5001"
+    depends_on:
+      - mongodb
+    networks:
+      - app-network
+
+  course-service:
+    image: course_service
+    ports:
+      - "5002:5002"
+    depends_on:
+      - mongodb
+    networks:
+      - app-network
+
+  progress-service:
+    image: progress_service
+    ports:
+      - "5003:5003"
+    depends_on:
+      - mongodb
+    networks:
+      - app-network
+
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    healthcheck:
+      test: ["CMD", "mongo", "--eval", "db.runCommand('ping')"]
+      interval: 30s
+      retries: 3
+    networks:
+      - app-network
+
+volumes:
+  mongo-data:
+
+networks:
+  app-network:
+    driver: bridge
