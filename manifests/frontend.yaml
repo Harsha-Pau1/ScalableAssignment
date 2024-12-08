@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: harshapaul265/frontend:latest
+          image: harshapaul265/fe:latest
           ports:
             - containerPort: 3000
 ---

@@ -1,6 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const progressRoutes = require("./routes/progressRoutes");
+const cors = require("cors");
+
 require("dotenv").config();
 require("./models/userModel");
 require("./models/progressModel");
@@ -26,6 +28,7 @@ mongoose.connection.on("error", (err) => {
   console.error(`Failed to connect to MongoDB: ${err.message}`);
 });
 
+app.use(cors());
 // Middleware
 app.use(express.json());
 // Routes

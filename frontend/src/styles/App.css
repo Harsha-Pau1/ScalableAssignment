@@ -1,0 +1,97 @@
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f7fc;
+  margin: 0;
+  padding: 0;
+}
+
+/* Center the form in the middle of the page */
+form {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Input fields styling */
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="password"],
+input[type="email"] {
+  font-size: 16px;
+}
+
+textarea {
+  min-height: 100px;
+}
+
+/* Button styling */
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Heading style */
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+/* Add spacing between form fields */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  margin-bottom: 15px;
+}
+
+/* Align login/register forms in the center of the page */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f7fc;
+}
+/* Style the radio buttons container */
+.role-selection {
+  margin: 10px 0;
+  display: flex;
+  gap: 20px; /* Space between radio buttons */
+  align-items: center; /* Align items vertically centered */
+}
+
+/* Style for each radio button and label */
+.role-selection label {
+  font-size: 16px;
+  color: #555;
+  display: flex; /* Align radio button and label horizontally */
+  align-items: center; /* Vertically center the label with the radio button */
+}
+
+/* Style for radio button */
+input[type="radio"] {
+  margin-right: 8px; /* Add some space between the radio button and label */
+}
